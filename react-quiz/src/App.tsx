@@ -74,14 +74,15 @@ const App = () => {
     <GlobalStyle />
     <Wrapper>
 
-      <h1>REACT QUIZ</h1>
-      {gameover || userAnswers.length === TOTAL_QUESTIONS ? (
+      <h1 className="quiz">Quiz</h1><h1 className="app">App</h1>
+      
+      {gameover ? (
         <button className="start" onClick={startTrivia}>
-          Start
+          START
         </button>
       ): null}
 
-      {!gameover ? <p className="score">Score: {score}</p> : null}
+      {!gameover ? <p className="score">SCORE: {score}</p> : null}
       {loading && <p>Loading Questions...</p>}
       {!loading && !gameover && (
         <QuestionCard
@@ -97,6 +98,12 @@ const App = () => {
       {!gameover && !loading && userAnswers.length === number+1 && number !== TOTAL_QUESTIONS - 1 ? (
         <button className="next" onClick={nextQuestion}>
           Next Question
+        </button>
+      ): null}
+
+      {!gameover && userAnswers.length === TOTAL_QUESTIONS ? (
+        <button className="start" onClick={startTrivia}>
+          RESTART
         </button>
       ): null}
 

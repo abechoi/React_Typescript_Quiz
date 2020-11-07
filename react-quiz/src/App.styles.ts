@@ -1,5 +1,4 @@
 import styled, {createGlobalStyle} from 'styled-components';
-import BGImage from './images/nattu-adnan.jpg';
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -7,17 +6,19 @@ html {
 }
 
 body {
-  background-image: url(${BGImage});
+  background-color: #20232A;
   background-size: cover;
   margin: 0;
   padding: 0 20px;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Catamaran', sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
 }
 `;
 
@@ -26,38 +27,40 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  >p {
-    color: #fff;
-  }
-
   .score {
-    color: #fff;
-    font-size: 2rem;
-    margin: 0;
+    color: #fdf200;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
   }
 
   h1 {
-    font-family: Fascinate Inline;
-    background-image: linear-gradient(180deg, #fff, #87f1ff);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    filter: drop-shadow(2px 2px #0085a3);
-    font-size: 70px;
-    fontweight: 400;
+    font-size: 50px;
     text-align: center;
-    margin: 20px;
+    margin: 0;
+  }
+  h1.quiz{
+    margin-top: 30px;
+    color: #61dafb;
+  }
+  h1.quiz: hover{
+    color: #fdf200;
+  }
+  h1.app{
+    margin-bottom: 30px;
+    color: #ff85ea;
+  }
+  h1.app: hover{
+    color: #fdf200;
   }
 
   .start, .next{
     cursor: pointer;
-    background: linear-gradient(180deg, #fff, #ffcc91);
-    border: 2px solid #d38558;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #00feca;
+    border-radius: 5px;
+    border: none;
     height: 40px;
     margin: 20px 0;
     padding: 0 40px;
@@ -65,6 +68,11 @@ export const Wrapper = styled.div`
 
   .start {
     max-width: 200px;
+  }
+
+  .start: hover, .next: hover{
+    color: #00feca;
+    background-color: #20232A;
   }
 
 `;

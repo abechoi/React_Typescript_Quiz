@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   max-width: 1100px;
-  background: #ebfeff;
-  border-radius: 10px;
-  border: 2px solid #0085a3;
-  padding: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  background: #20232A;
+  border-radius: 5px;
+  border: 5px solid #7b61f8;
+  padding: 10px;
   text-align: center;
 
   p {
-    font-size: 1rem;
+    color: #fff;
+    font-size: 20px;
   }
 `
 
@@ -33,15 +33,11 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     margin: 5px 0;
     background: ${({ correct, userClicked }) => 
       correct ?
-      'linear-gradident(90deg, #56ffa4, #59bc86)' :
+      'green' :
       !correct && userClicked ?
-      'linear-gradident(90deg, #ff5656, #c16868)' :
-      'linear-gradident(90deg, #56ccff, #6eafb4)'
+      'green' :
+      'red'
     }
-    border: 3px solid #fff;
-    box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    color: #fff;
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
   }
 `
